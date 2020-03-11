@@ -90,16 +90,6 @@ func WinSparkleSetAppBuildVersion(build string) {
 	winsparkle.Proc("win_sparkle_set_app_build_version").Call(uintptr(unsafe.Pointer(buildC)))
 }
 
-func WinSparkleSetHTTPHeader(name string, value string) {
-	nameC := StringToCharPtr(name)
-	valueC := StringToCharPtr(value)
-	winsparkle.Proc("win_sparkle_set_http_header").Call(uintptr(unsafe.Pointer(nameC)), uintptr(unsafe.Pointer(valueC)))
-}
-
-func WinSparkleCleanHTTPHeaders() {
-	winsparkle.Proc("win_sparkle_clear_http_headers").Call()
-}
-
 func WinSparkleSetRegistryPath(path string) {
 	pathC := StringToCharPtr(path)
 	winsparkle.Proc("win_sparkle_set_registry_path").Call(uintptr(unsafe.Pointer(pathC)))
