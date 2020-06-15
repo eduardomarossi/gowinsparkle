@@ -99,6 +99,10 @@ func WinSparkleSetAutomaticCheckForUpdates(state int64) {
 	winsparkle.Proc("win_sparkle_set_automatic_check_for_updates").Call(uintptr(state))
 }
 
+func WinSparkleSetHideUpdaterWindows(hide int64) {
+	winsparkle.Proc("win_sparkle_set_hide_updater_windows").Call(uintptr(hide))
+}
+
 func WinSparkleGetAutomaticCheckForUpdates() int64 {
 	ret1, _, _ := winsparkle.Proc("win_sparkle_get_automatic_check_for_updates").Call()
 	return int64(ret1)
